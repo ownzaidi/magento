@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Falcon\RewardPoints\Api\SpendingManagementInterface" type="Falcon\RewardPoints\Model\Api\SpendingManagement"/>
+    <preference for="Falcon\RewardPoints\Api\Data\OrderInterface" type="Falcon\RewardPoints\Model\Order"/>
+    <preference for="Falcon\RewardPoints\Api\Data\LakumInterface" type="Falcon\RewardPoints\Model\Lakum"/>
+    <preference for="Falcon\RewardPoints\Api\Data\LakumHistoryInterface" type="Falcon\RewardPoints\Model\LakumHistory"/>
+    <preference for="Falcon\RewardPoints\Api\Data\GainedPointInterface" type="Falcon\RewardPoints\Model\GainedPoint"/>
+    <preference for="Falcon\RewardPoints\Api\Data\ConsumedPointInterface" type="Falcon\RewardPoints\Model\ConsumedPoint"/>
+    <preference for="Falcon\RewardPoints\Api\Data\TransferPointInterface" type="Falcon\RewardPoints\Model\TransferPoint"/>
+
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="loyalty_reward_order" type="Falcon\RewardPoints\Plugin\OrderGet"/>
+    </type>
+</config>
