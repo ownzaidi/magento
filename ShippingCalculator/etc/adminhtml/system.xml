@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="flatrate" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <field id="de_shipping" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1"
+                       canRestore="1">
+                    <label>Germany Less Then 100 products Rate</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="de_shipping_more" translate="label" type="text" sortOrder="11" showInDefault="1"
+                       showInWebsite="1" canRestore="1">
+                    <label>Germany Greater Then 100 products Rate</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="ch_shipping" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="1"
+                       canRestore="1">
+                    <label>Switzerland Less Then 100 products Rate</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="ch_shipping_more" translate="label" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" canRestore="1">
+                    <label>Switzerland Greater Then 100 products Rate</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="at_shipping" translate="label" type="text" sortOrder="17" showInDefault="1" showInWebsite="1"
+                       canRestore="1">
+                    <label>Austria Less Then 100 products Rate</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="at_shipping_more" translate="label" type="text" sortOrder="19" showInDefault="1"
+                       showInWebsite="1" canRestore="1">
+                    <label>Austria Greater Then 100 products Rate</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="ot_shipping" translate="label" type="text" sortOrder="21" showInDefault="1"
+                       showInWebsite="1" canRestore="1">
+                    <label>Other Countries Less Then 100 products Rate</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="ot_shipping_more" translate="label" type="text" sortOrder="23" showInDefault="1"
+                       showInWebsite="1" canRestore="1">
+                    <label>Other Countries Greater Then 100 products Rate</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
