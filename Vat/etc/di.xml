@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="add_vat_field"
+                type="Falcon\Vat\Plugin\Checkout\LayoutProcessorPlugin" sortOrder="10"/>
+    </type>
+    <preference for="Magento\Tax\Model\Sales\Total\Quote\Tax" type="Falcon\Vat\Model\Sales\Total\Quote\Tax"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sales_order_grid_data_source" xsi:type="string">Falcon\Vat\Model\ResourceModel\Order\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Vendor\Module\Model\ResourceModel\Order\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sales_order_grid</argument>
+            <argument name="resourceModel" xsi:type="string">Magento\Sales\Model\ResourceModel\Order</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Quote\Model\BillingAddressManagement">
+        <plugin disabled="false" name="BillingAddressManagement" sortOrder="10" type="Falcon\Vat\Plugin\Checkout\BillingAddressManagement"/>
+    </type>
+    <type name="Magento\Quote\Model\ShippingAddressManagement">
+        <plugin disabled="false" name="ShippingAddressManagement" sortOrder="10" type="Falcon\Vat\Plugin\Checkout\ShippingAddressManagement"/>
+    </type>
+</config>
