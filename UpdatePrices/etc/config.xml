@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:etc/config.xsd">
+    <default>
+        <part_blue>
+            <general>
+                <active>1</active>
+            </general>
+        </part_blue>
+    </default>
+</config>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @author Falcon Team
+* @copyright Copyright (c) 2024 AutoParts
+* Created by PhpStorm
+* User: adeel
+* Date: 5/4/21
+* Time: 5:39 PM
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="part_blue_tab" translate="label" sortOrder="500">
+            <label>PartBlue Prices</label>
+        </tab>
+        <section id="part_blue" translate="label" sortOrder="140" showInDefault="1">
+            <class>separator-top</class>
+            <label>PartBlue Prices Cron</label>
+            <tab>part_blue_tab</tab>
+            <resource>Falcon_UpdatePrices::part_blue</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>Update Price Cron</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="file_id" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>File Upload Button</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\File</backend_model>
+                    <upload_dir config="system">import</upload_dir>
+                </field>
+                <field id="delete_file" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Delete Processed Chunks File</label>
+                    <frontend_model>Falcon\UpdatePrices\Block\Adminhtml\System\Config\DeleteFile</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
